@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function playerPlay() {
+            let choice = prompt("Please choose: Rock, Paper, or Scissors");
+            return choice.toLowerCase();
+        }
+
+        function computerPlay() {
+            let computerChoice = ['rock', 'paper', 'scissor'];
+            return computerChoice[Math.floor(Math.random() * 3)];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection == computerSelection) {
+                return playerTie();
+            }
+            else if (playerSelection == 'rock') {
+                if (computerSelection == 'scissors')
+                    return playerWin();
+                else
+                    return playerLose();
+            }
+            else if (playerSelection == 'paper') {
+                if (computerSelection == 'scissors')
+                    return playerWin();
+                else
+                    return playerLose();
+            }
+            else if (playerSelection == 'scissors') {
+                if (computerSelection == 'paper')
+                    return playerWin();
+                else
+                    return playerLose();
+            }
+        }
+
+        function game() {
+
+        }
+
+        function playerWin() {
+
+        }
+
+        function playerLose() {
+
+        }
+    </script>
+</body>
+
+</html>
