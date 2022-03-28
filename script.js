@@ -2,6 +2,9 @@ const playerInput = document.getElementsByClassName("rpsImage");
 const playerHand = document.getElementById("playerHand");
 const cpuHand = document.getElementById("cpuHand");
 const gameText = document.getElementById("gameText");
+const modal = document.getElementById("modal");
+const modalContainer = document.getElementById("modalContainer");
+const modalTitle = document.getElementById("modalTitle");
 const delayInMilliseconds = 1425;
 
 let cpuChoice = '';
@@ -10,15 +13,6 @@ let playerScore = 0;
 let computerScore = 0;
 
 function playerPlay(input) {
-    // let valid = false;
-    // let choice = prompt("Please choose: Rock, Paper, or Scissors").toLowerCase();
-    // if (choice == 'rock' || choice == 'paper' || choice == 'scissors')
-    //     valid = true;
-    // while (!valid) {
-    //     choice = prompt("Invalid choice. Please choose: Rock, Paper, or Scissors").toLowerCase();
-    //     if (choice == 'rock' || choice == 'paper' || choice == 'scissors')
-    //         valid = true;
-    // }
     return input;
 }
 
@@ -55,14 +49,39 @@ function playRound(playerSelection, computerSelection) {
 // checks to see if game is ovr then prompts user to play again
 function gameOver() {
     if (playerScore === 5 && playerScore > computerScore) {
-        console.log(`You win! Final Score: ${playerScore} - ${computerScore}`);
+        modalTitle.innerHTML =`You win! <br /> Final Score: ${playerScore} - ${computerScore}`;
+        showModal();
     }
     else if (computerScore === 5 && playerScore < computerScore) {
-        console.log(`You lose! Final Score: ${playerScore} - ${computerScore}`);
+        modalTitle.innerHTML =`You Lose! <br /> Final Score: ${playerScore} - ${computerScore}`;
+        showModal();
     }
-    
-
 }
+
+function showModal () {
+    setTimeout(function () {
+        modalContainer.classList.add('show');
+        }, delayInMilliseconds)
+}
+
+
+function testModal () {
+    modalTitle.innerHTML =`You Win! <br /> Final Score: 5 - 0`;
+    showModal();
+}
+
+// function hideInputs () {
+//     setTimeout(function () {
+//         document.querySelectorAll('.rpsImage').forEach(item => { 
+//             item.classList.add('hidden');
+//         })
+//         document.querySelectorAll('.cardText').forEach(item => { 
+//             item.classList.add('hidden');
+//         })
+//         document.getElementById('playAgainBtn').classList.remove('hidden');
+//     }, delayInMilliseconds)
+
+// }
 // player win
 function playerWin(playerSelection, computerSelection) {
     let msg = `You win! ${playerSelection} beats ${computerSelection}.`;
@@ -79,15 +98,13 @@ function playerLose(playerSelection, computerSelection) {
 }
 // tie
 function playerTie(playerSelection, computerSelection) {
-    let msg = `You tie! Both players selected ${playerSelection}.`;
+    let msg = `Tie! Both players selected ${playerSelection}.`;
     updateText(msg);
 }
 
 function updateText (msg) {
     setTimeout(function () {
-        gameText.insertAdjacentHTML('beforeend', `${msg} <br />`);
-        // let lines = gameText.split('<br />');
-        // alert(gameText.innerHTML);
+        gameText.innerHTML = msg;
         score();
     }, delayInMilliseconds)
 }
