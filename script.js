@@ -85,8 +85,10 @@ function playerTie(playerSelection, computerSelection) {
 
 function updateText (msg) {
     setTimeout(function () {
-        gameText.insertAdjacentHTML('beforeend', `${msg} <br />`)
-        score();;
+        gameText.insertAdjacentHTML('beforeend', `${msg} <br />`);
+        // let lines = gameText.split('<br />');
+        // alert(gameText.innerHTML);
+        score();
     }, delayInMilliseconds)
 }
 
