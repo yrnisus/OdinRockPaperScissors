@@ -83,11 +83,14 @@ body {
 
 /* Hands no longer working */
 .rpsBoxImg {
-    animation: moveUpDown 2.0s linear infinite;
     height: auto;
     width: 300px;
     position: relative;
     /* border: 1px solid black; */
+}
+
+.animated {
+    animation: moveUpDown 2.0s linear infinite;
 }
 
 @keyframes moveUpDown {

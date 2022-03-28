@@ -84,17 +84,18 @@ function playerTie(playerSelection, computerSelection) {
 // image to change the playerHand to
 document.querySelectorAll('.rpsImage').forEach(item => {
     item.addEventListener('mouseover', event => {
-        document.getElementById("playerHand").src="./images/PaperLeft.png";
+        document.getElementById("playerHand").src=`./images/${item.id}Left.png`;
     })
     item.addEventListener('mouseleave', event => {
-        document.getElementById("playerHand").src="./images/RockLeft.png";
+        document.getElementById("playerHand").src="./images/rockLeft.png";
+    })
+    item.addEventListener('click', event => {
+        item.classList.toggle('animated');
     })
 })
 
 
 
-
-function changeImage () {
-    alert();
-    // document.getElementById("playerHand").src="../newImgSrc.jpg";
+//begin game
+function playAnimation(item) {
 }
