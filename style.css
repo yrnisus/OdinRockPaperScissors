@@ -90,7 +90,7 @@ body {
 }
 
 .animated {
-    animation: moveUpDown 2.0s linear infinite;
+    animation: moveUpDown .40s linear 4;
 }
 
 @keyframes moveUpDown {
@@ -98,12 +98,11 @@ body {
       bottom: 0;
     }
     50% {
-      bottom: 12px;
+      bottom: 70px;
     }
   }
 
-
-.history-box {
+.historyBox {
     display: flex;
     justify-content: center;
     width: 30%;
@@ -111,8 +110,10 @@ body {
     background-color: white;
     border: 8px solid black;
     border-radius: 25px;
+    margin-top: -50px;
 }
 
-.history-text {
+.historyText {
     margin: 10px;
+    text-align: center;
 }
