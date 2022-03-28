@@ -1,9 +1,5 @@
-// let test = document.getElementById("rpsImage");
-
-
-
-
-
+const playerInput = document.getElementsByClassName("rpsImage");
+const playerHand = document.getElementById("playerHand");
 
 let playerScore = 0;
 let computerScore = 0;
@@ -82,12 +78,23 @@ function playerLose(playerSelection, computerSelection) {
 function playerTie(playerSelection, computerSelection) {
     console.log(`You tie! Both players selected ${playerSelection}.`);
 }
-// test.addEventListener("mouseenter", function( event ) {
-//     // highlight the mouseenter target
-//     alert();
-  
-//     // reset the color after a short delay
-//     setTimeout(function() {
-//       event.target.style.color = "";
-//     }, 500);
-//   }, false);
+
+// Adds event listener to all of the player input hands
+// I need to get the id of the element that was hovered over then need to use that id to know which
+// image to change the playerHand to
+document.querySelectorAll('.rpsImage').forEach(item => {
+    item.addEventListener('mouseover', event => {
+        document.getElementById("playerHand").src="./images/PaperLeft.png";
+    })
+    item.addEventListener('mouseleave', event => {
+        document.getElementById("playerHand").src="./images/RockLeft.png";
+    })
+})
+
+
+
+
+function changeImage () {
+    alert();
+    // document.getElementById("playerHand").src="../newImgSrc.jpg";
+}

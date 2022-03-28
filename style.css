@@ -64,7 +64,7 @@ body {
 .rpsImage:hover {
     transform: scale(1.25);
 }
-.rps-box
+.rpsBox
 {
     display: flex;
     justify-content: center;
@@ -80,10 +80,14 @@ body {
     font-size: 160px;
 }
 
-.rps-box img {
+
+/* Hands no longer working */
+.rpsBoxImg {
     animation: moveUpDown 2.0s linear infinite;
     height: auto;
     width: 300px;
+    position: relative;
+    /* border: 1px solid black; */
 }
 
 @keyframes moveUpDown {
@@ -91,7 +95,7 @@ body {
       bottom: 0;
     }
     50% {
-      bottom: 10px;
+      bottom: 12px;
     }
   }
 
