@@ -5,6 +5,7 @@ const gameText = document.getElementById("gameText");
 const modal = document.getElementById("modal");
 const modalContainer = document.getElementById("modalContainer");
 const modalTitle = document.getElementById("modalTitle");
+const playAgain= document.getElementById("playAgain");
 const delayInMilliseconds = 1425;
 
 let cpuChoice = '';
@@ -153,6 +154,10 @@ playerHand.addEventListener('animationend', () => {
     cpuHand.classList.remove('animated');
   });
 
-//begin game
-function playAnimation(item) {
-}
+playAgain.addEventListener('click', () => {
+    modalContainer.classList.remove('show');
+    playerScore = 0;
+    computerScore = 0;
+    gameText.innerHTML = '';
+    score();
+}) 

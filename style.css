@@ -165,7 +165,13 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     border: 8px solid black;
     border-radius: 25px;
-    height: auto;
+    height: 100px;
     width: 400px;
-    font-size: 32px;
+    font-size: 36px;
+    font-weight: bold;
     background-color: #ff6666;
+}
+
+.playAgainBtn:hover {
+    background-color: #ff1a1a
+}
