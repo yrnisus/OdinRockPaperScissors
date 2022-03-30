@@ -7,10 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <title>Rock Paper Scissors</title>
 </head>
 
 <body>
+    <div id='overlay' class="pageOverlay">
+        <div class="videoContainer">
+        <video class='movie' id="movie" muted autoplay preload>
+            <source src='./images/animation.mp4' type="video/mp4" />
+        </video>
+    </div>
+    </div>
     <div id='modalContainer' class="modalContainer">
         <div id='modal' class="modal">
             <h1 id='modalTitle'></h1>

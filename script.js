@@ -85,14 +85,15 @@ function testModal () {
 // }
 // player win
 function playerWin(playerSelection, computerSelection) {
-    let msg = `You win! ${playerSelection} beats ${computerSelection}.`;
+    
+    let msg = `You win! ${capitalizeFirstLetter(playerSelection)} beats ${computerSelection}.`;
     playerScore++;
     updateText(msg);
     gameOver();
 }
 // cpu win
 function playerLose(playerSelection, computerSelection) {
-    let msg = `You lose! ${computerSelection} beats ${playerSelection}.`;
+    let msg = `You lose! ${capitalizeFirstLetter(computerSelection)} beats ${playerSelection}.`;
     computerScore++;
     updateText(msg);
     gameOver();
@@ -115,6 +116,10 @@ function score() {
     document.getElementById("playerScore").innerHTML = playerScore;
     document.getElementById("cpuScore").innerHTML = computerScore;
 }
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
 
 // Adds event listener to all of the player input hands
@@ -161,3 +166,11 @@ playAgain.addEventListener('click', () => {
     gameText.innerHTML = '';
     score();
 }) 
+
+
+const overlay = document.getElementById('overlay');
+overlay.addEventListener("click", function(){
+    overlay.classList.add('hide');
+});
+
+// Put text after video animation
